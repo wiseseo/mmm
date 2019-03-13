@@ -1,7 +1,6 @@
 import flask
 from flask import Flask, render_template, request, jsonify
 from flask_restful import reqparse, abort, Api, Resource
-#from flask_mysqldb import MySQL
 import pymysql
 from datetime import datetime
 import pandas as pd
@@ -10,15 +9,6 @@ import time
 
 app = Flask(__name__)
 api = Api(app)
-
-'''
-app.config['MYSQL_HOST'] = '210.89.188.137'
-app.config['MYSQL_PORT'] = 3306
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '149tjvnfma!'
-app.config['MYSQL_DB'] = 'music'
-app.config['MYSQL_CHARSET'] ='utf8'
-'''
 
 @app.route("/")
 def my_index():
@@ -77,43 +67,3 @@ def get_img():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-
-'''
-melon_R=[]
-melon_T=[]
-melon_S=[]
-melon_A=[]
-melon_P=[]
-melon_T=[]
-id = 0
-'''
-
-'''
-from flask import Flask, request
-from flaskext.mysql import MySQL
-
-app = Flask(__name__)
-mysql = MySQL()
-
-app.config['MYSQL_DATABASE_USER']='root'
-
-'''
-
-'''
-for i in range(100) :
-    melon.append(melon_mysql[i])
-    melon_R.append(melon[i][0])
-    melon_T.append(melon[i][1])
-    melon_S.append(melon[i][2])
-    melon_A.append(melon[i][3])
-    #melon_P.append(melon[i][4])
-    melon_T.append(melon[i][5])
-    
-'''
-
-'''
-for i in range(100):
-    melon = {'id': id, 'title': melon_T[i],'singer': melon_S[i], 'album': melon_A[i]}
-    id++
-#print rows
-'''
