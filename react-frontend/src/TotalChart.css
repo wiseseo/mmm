@@ -1,3 +1,9 @@
+html, body {
+    width:100%;
+    margin:0;
+    overflow:show;
+}
+
 .album_cover {
     background-image: url(./photos/album_chungA.png), 
     url(./photos/IU.png), 

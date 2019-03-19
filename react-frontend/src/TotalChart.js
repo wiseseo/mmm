@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import chungA_2 from './photos/chungA_2.png';
 import IU from './photos/IU.png';
+import chungA from './photos/album_chungA.png';
+import 윤딴딴 from './photos/윤딴딴.jpg';
+
 
 class TotalChart extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            totalChart: [],
-            img_src: []
+            totalChart: []
         }
     }
     
     componentDidMount() {
         
-        fetch('http://210.89.188.137:5000/api/chart')
+        fetch('http://127.0.0.1:5000/api/chart')
             .then(res => res.json())
             .then(json => {
                 this.setState({
                     totalChart: json
-                })
-            });
-        
-        fetch('http://210.89.188.137:5000/api/img')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    img_src: json
                 })
             });
     }
@@ -38,7 +32,7 @@ class TotalChart extends Component {
             backgroundSize: '100%'   
         }*/
 
-        var { totalChart, img_src } = this.state; 
+        var { totalChart } = this.state; 
 
         return (
             <div>
@@ -61,7 +55,7 @@ class TotalChart extends Component {
                             <td>{chart.num}</td>
                             {/*{img_src.map(img=>(*/}
                             <td>{/*{list.album_cover}*/} 
-                            <img src="https://cdnimg.melon.co.kr/cm/album/images/102/38/711/10238711_500.jpg/melon/resize/120/quality/80/optimize"
+                            <img src={chart.img}
                             className="album_cover" alt="album_cover"/></td>
                             <td>{chart.title}</td>
                             <td>{chart.artist}</td>
