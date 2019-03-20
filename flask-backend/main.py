@@ -1,14 +1,11 @@
 import flask
 from flask import Flask, render_template, request, jsonify
-from flask_restful import reqparse, abort, Api, Resource
 import pymysql
 from datetime import datetime
-import pandas as pd
 import json
 import time
 
 app = Flask(__name__)
-api = Api(app)
 
 @app.route("/")
 def my_index():
@@ -40,6 +37,16 @@ def get_chart():
     conn.close()
 
     return json.dumps(melon_chart,ensure_ascii=False)
+
+@app.route("/api/time", methods= ['GET'])
+def get_time():
+    now= datetime.now()
+    nowDateTime = now.strftime("%Y.%m.%d %H")
+    nowDateTime= nowDateTime + ":00"
+
+    time = {'time': nowDateTime}
+
+    return json.dumps(time)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
