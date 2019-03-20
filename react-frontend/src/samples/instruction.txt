@@ -1,0 +1,4 @@
+For the sake of simplicity, we have kept only one chart example in App.js
+To try out few more examples, please replace content of App.js with other examples provided within samples folder
+
+If you have any queries or need assistance, please post on our free technical support forum at https://canvasjs.com/forums/

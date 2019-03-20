@@ -31,10 +31,12 @@ table thead tr, tbody tr:nth-child(even) {
   border-left : 0px;
   border-right  : 0px;
 }
-/*
+
 table tbody tr:nth-child(1) {
-  background-image: url(./photos/chungA_2.png);
+  background-image: url("https://cdnimg.melon.co.kr/cm/album/images/102/62/378/10262378_500.jpg");
   background-repeat: no-repeat;
+  background-position: 50% 35%;
+  /*opacity : 0.5;*/
   background-size: 100%;
-}*/
+}
 
