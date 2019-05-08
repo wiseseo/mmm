@@ -11,6 +11,24 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state ={
+        time: []
+    }
+  }
+  
+  componentDidMount() {
+    
+    fetch('http://127.0.0.1:5000/api/time')
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+                time: json
+            })
+        });
+  }
+  
   render() {
     var options = {
       animationEnabled: true,

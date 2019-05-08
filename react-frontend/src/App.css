@@ -40,3 +40,8 @@ table tbody tr:nth-child(1) {
   background-size: 100%;
 }
 
+html, body {
+  height:100%;
+  margin:0;
+  overflow-x:hidden;
+}
